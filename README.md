@@ -61,7 +61,7 @@ This project implements a backend system with WebSocket communication, PostgreSQ
     ```
 
 - **Response:**
-  **200 OK:** Successfully fetched data.
+- **200 OK:** Successfully fetched data.
     ```json
     {
     "success": true,
@@ -80,7 +80,7 @@ This project implements a backend system with WebSocket communication, PostgreSQ
     }
     }
     ```
-   **403 Forbidden:** Access denied for non-admin users.
+- **403 Forbidden:** Access denied for non-admin users.
     ```json
     {
     "message": "Forbidden: You don't have the required role!"
@@ -109,7 +109,7 @@ This project implements a backend system with WebSocket communication, PostgreSQ
     ```
 
 - **Response:**
-  **200 OK:** Successfully fetched data.
+- **200 OK:** Successfully fetched data.
     ```json
     {
     "statusCode": 200,
@@ -128,7 +128,7 @@ This project implements a backend system with WebSocket communication, PostgreSQ
     ]
     }
     ```
-  **403 Forbidden:** Access denied for non-admin users.
+- **403 Forbidden:** Access denied for non-admin users.
     ```json
     {
     "message": "Forbidden: You don't have the required role!"
@@ -155,14 +155,14 @@ This project implements a backend system with WebSocket communication, PostgreSQ
     ```
 
 - **Response:**
-  **201 Created:** Data sent successfully.
+- **201 Created:** Data sent successfully.
     ```json
     {
     "message": "Survey sent successfully!",
     "success": true
     }
     ```
-  **400 Bad Request:** Invalid request body.
+- **400 Bad Request:** Invalid request body.
     ```json
     {
     "message": "UserId is required in the body!"
