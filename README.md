@@ -178,12 +178,12 @@ To run the tests for this application, follow these steps:
 
 - Build the Docker Image and Start the Docker Containers
     ```bash 
-        make build-dev
+    make build-dev
     ```
 
 - Access the Backend Container
     ```bash 
-        docker exec -it threatmap-backend sh
+    docker exec -it threatmap-backend sh
     ```
 
 - Run the Tests
