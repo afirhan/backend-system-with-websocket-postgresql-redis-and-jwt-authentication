@@ -6,7 +6,7 @@ This project implements a backend system with WebSocket communication, PostgreSQ
 2. [Requirements](#requirements)
 3. [Usage](#usage)
 4. [API Documentation](#api-documentation)
-4. [Running Tests](#running-tests)
+5. [Running Tests](#running-tests)
 
 
 ## Features
