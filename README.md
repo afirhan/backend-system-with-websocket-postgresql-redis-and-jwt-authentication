@@ -67,6 +67,8 @@ Check the output to ensure all tests have passed or identify any issues.
 ![alt text](<Screenshot 2024-08-26 at 06.56.04.png>)
 
 ## API Documentation
+File `threatmap-insomnia.json`, which contains the API endpoints and request details for the application.
+
 ### 1. `GET /api/getData`
 
 - **Description:** Fetches data from the backend.
