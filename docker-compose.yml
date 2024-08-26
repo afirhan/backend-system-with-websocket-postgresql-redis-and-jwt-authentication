@@ -26,7 +26,9 @@ services:
     container_name: redis
     restart: always
     ports:
-      - "6380:6379"
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
     networks:
       - threatmap-network
 
@@ -59,6 +61,7 @@ services:
 
 volumes:
   postgres-data:
+  redis-data:
 
 networks:
   threatmap-network:

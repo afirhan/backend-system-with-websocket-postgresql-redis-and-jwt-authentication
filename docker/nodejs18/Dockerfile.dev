@@ -5,10 +5,10 @@ LABEL description="Node.js Application for Threatmap Backend"
 
 WORKDIR /app
 
-COPY backend/package.json .
-
+# Copy application files
+COPY backend/package*.json .
 RUN npm install
-
 COPY backend .
 
+# Start Redis and Node.js application
 CMD ["npm", "start"]

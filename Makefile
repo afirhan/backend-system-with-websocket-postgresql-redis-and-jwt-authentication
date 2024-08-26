@@ -17,3 +17,13 @@ start:
 stop:
 	find . -type f -name '._*' -delete
 	docker stop $$(docker ps -a -q)
+
+reset:
+	find . -type f -name '._*' -delete
+	docker stop $$(docker ps -q)
+	docker rm $$(docker ps -a -q)
+	docker volume rm $$(docker volume ls -q) || true
+	docker rmi afirhan/threatmap || true
+	docker rmi postgres:15 || true
+	docker rmi redis:alpine || true
+	docker network rm threatmap-network || true

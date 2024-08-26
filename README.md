@@ -1,16 +1,15 @@
 # Backend System with WebSocket, PostgreSQL, Redis, and JWT Authentication
-
 This project implements a backend system with WebSocket communication, PostgreSQL for data storage, Redis caching, and JWT-based authentication with role-based access control. The system uses raw SQL queries, stores threat data from Radware's live threat map, and includes unit tests to ensure endpoint functionality.
 
 ## Table of Contents
-
 1. [Features](#features)
 2. [Requirements](#requirements)
 3. [Usage](#usage)
 4. [API Documentation](#api-documentation)
+4. [Running Tests](#running-tests)
+
 
 ## Features
-
 - WebSocket communication for real-time updates.
 - PostgreSQL database for persistent storage.
 - Redis caching for improved performance.
@@ -18,7 +17,6 @@ This project implements a backend system with WebSocket communication, PostgreSQ
 - Unit tests using Jest.
 
 ## Requirements
-
 - Docker Desktop 4.33.0
 - Docker Compose version v2.29.1-desktop.1
 
@@ -38,7 +36,6 @@ This project implements a backend system with WebSocket communication, PostgreSQ
       ```
 
 ## API Documentation
-
 ### 1. `GET /api/getData`
 
 - **Description:** Fetches data from the backend.
@@ -170,9 +167,30 @@ This project implements a backend system with WebSocket communication, PostgreSQ
     ```
 
 ### WebSocket
-
 - **URL:** `ws://localhost:7878`
 - **Description:** Connects to the WebSocket server for real-time communication.
 - **Example Usage:**
 
 Use a WebSocket client to connect to `ws://localhost:7878`. You can send and receive messages as per the WebSocket protocol and your application's requirements.
+
+## Running Tests
+To run the tests for this application, follow these steps:
+
+- Build the Docker Image and Start the Docker Containers
+    ```bash 
+        make build-dev
+    ```
+
+- Access the Backend Container
+    ```bash 
+        docker exec -it threatmap-backend sh
+    ```
+
+- Run the Tests
+    ```bash 
+    npm test
+    ```
+
+- Review Test Results
+Check the output to ensure all tests have passed or identify any issues.
+![alt text](<Screenshot 2024-08-26 at 06.56.04.png>)
