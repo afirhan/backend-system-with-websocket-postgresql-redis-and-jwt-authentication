@@ -1,13 +1,13 @@
-# Backend System with WebSocket, PostgreSQL, Redis, and JWT Authentication
+# THREATMAP
 This project implements a backend system with WebSocket communication, PostgreSQL for data storage, Redis caching, and JWT-based authentication with role-based access control. The system uses raw SQL queries, stores threat data from Radware's live threat map, and includes unit tests to ensure endpoint functionality.
 
 ## Table of Contents
 1. [Features](#features)
 2. [Requirements](#requirements)
-3. [Usage](#usage)
-4. [API Documentation](#api-documentation)
+3. [Setting Up the Database](#setting-up-the-database)
+4. [Usage](#usage)
 5. [Running Tests](#running-tests)
-
+6. [API Documentation](#api-documentation)
 
 ## Features
 - WebSocket communication for real-time updates.
@@ -34,6 +34,37 @@ This project implements a backend system with WebSocket communication, PostgreSQ
       ```bash
       make build-dev
       ```
+
+## Setting Up the Database
+To set up the database for this project, follow these steps:
+
+**1. Create the Database**
+Before running the application, you need to create a database named `backenddb`. If you are using Docker for PostgreSQL, you can create the database directly within the Docker container using the following command:
+
+```sh
+docker-compose exec postgresdb psql -U <your_postgres_user> -c "CREATE DATABASE backenddb;"
+```
+## Running Tests
+To run the tests for this application, follow these steps:
+
+- Build the Docker Image and Start the Docker Containers
+    ```bash 
+    make build-dev
+    ```
+
+- Access the Backend Container
+    ```bash 
+    docker exec -it threatmap-backend sh
+    ```
+
+- Run the Tests
+    ```bash 
+    npm test
+    ```
+
+- Review Test Results
+Check the output to ensure all tests have passed or identify any issues.
+![alt text](<Screenshot 2024-08-26 at 06.56.04.png>)
 
 ## API Documentation
 ### 1. `GET /api/getData`
@@ -172,25 +203,3 @@ This project implements a backend system with WebSocket communication, PostgreSQ
 - **Example Usage:**
 
 Use a WebSocket client to connect to `ws://localhost:7878`. You can send and receive messages as per the WebSocket protocol and your application's requirements.
-
-## Running Tests
-To run the tests for this application, follow these steps:
-
-- Build the Docker Image and Start the Docker Containers
-    ```bash 
-    make build-dev
-    ```
-
-- Access the Backend Container
-    ```bash 
-    docker exec -it threatmap-backend sh
-    ```
-
-- Run the Tests
-    ```bash 
-    npm test
-    ```
-
-- Review Test Results
-Check the output to ensure all tests have passed or identify any issues.
-![alt text](<Screenshot 2024-08-26 at 06.56.04.png>)
